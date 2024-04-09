@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+main{
+    height: 100vh;
+    box-sizing: border-box;
+    /*padding: 20px;  Espaçamento interno */
+}
+
+nav.menu-lateral{
+    padding: 0;
+    margin: 0;
+    /* width: 300px; */
+    width: 4%;
+    float: left;
+    height: 100%;
+    background-color: rgb(58, 54, 49);
+    box-shadow: 3px 0 0 #FF0077;
+    z-index: 1; /* Define a ordem de empilhamento */
+    position: fixed; /* Fixa a nav */
+    top: 0; /* Alinha a nav no topo */
+    left: 0; /* Alinha a nav à esquerda */
+    overflow: hidden; /* Esconde o conteúdo que transborda */
+}
+
+nav.menu-lateral:hover{
+    width: 20%;
+}
+
+article{
+    background-color:darkgray;
+    text-align: center;
+    flex: 1; /* Ocupa o espaço restante */
+    height: 100%;
+    padding-left: 0;
+    box-sizing: border-box;
+    transition: margin-left 0.5s; /* Adiciona uma transição para o margin-left */
+}
+
+.menu-lateral:hover + article {
+    width: 79.9%; /* Define a largura do artigo como 90% ao passar o mouse na nav */
+    float: right;
+}
+
+
+.btn-expandir{
+    padding-top: 10px;
+    width: 100%;
+    padding-left: 25px;
+}
+
+.btn-expandir > i{
+    color:azure;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+nav ul li{
+    list-style-type: none;
+    padding-left: 20px;
+}
+a{
+    text-decoration: none;
+}
+
+.item-menu a{
+    color: azure;
+    text-decoration: none;
+    font-size: 30px;
+    padding: 20px 4%;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.item-menu a .txt-link{
+    margin-left: 28px;
+}
+
+.item-menu:hover{
+    background-color: #FF0077;
+}
+
+.item-menu a .icon > i{
+    font-size: 30px;
+}
+
+footer{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(164, 140, 186);
+    width: 100%;
+    height: auto;
+}
+
+footer .direitos{
+    text-align: center; 
+    font-size: 30px; 
+    color: rgb(128, 82, 82);
+}
