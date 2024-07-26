@@ -1,5 +1,7 @@
 package br.com.beckcannabismed.projetoconsultamedica.model;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,7 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="Paciente")
+@Table(name="paciente")
 
 public class Paciente {
 
@@ -18,11 +20,11 @@ public class Paciente {
 
     @Column
     (length = 50)
-    private String name;
+    private String nome;
 
     @Column
-    (length = 10)
-    private String data_nasc;
+    (name = "data_nasc")
+    private LocalDate data_nasc;
 
     @Column
     (length = 50)
@@ -33,24 +35,18 @@ public class Paciente {
     private String telefone;
 
     @Column
-    (length = 10) // 04 / 05 / 2024
-    private String data_admissao;
+    (name = "data_admissao") 
+    private LocalDate data_admissao;
 
     public Paciente()
     {
 
     }
 
-    public Paciente(String name)
+    public Paciente(String nome, LocalDate data_nasc, String endereco,  
+    String telefone, LocalDate data_admissao)
     {
-        this.name = name;
-    }
-
-
-    public Paciente(String name, String data_nasc, String endereco,  
-    String telefone, String data_admissao)
-    {
-        this.name = name;
+        this.nome = nome;
         this.data_nasc = data_nasc;
         this.endereco = endereco;
         this.telefone = telefone;
@@ -72,25 +68,25 @@ public class Paciente {
         this.endereco = endereco;
     }
 
-    public String getNasc() {
+    public LocalDate getData_nasc() {
         return this.data_nasc;
     }
-    public void setDataNasc(String data_nasc) {
+    public void setData_nasc(LocalDate data_nasc) {
         this.data_nasc = data_nasc;
     }
 
-    public String getDateAdmissao() {
+    public LocalDate getData_admissao() {
         return this.data_admissao;
     }
-    public void setDateAdmissao(String data_admissao) {
+    public void setData_admissao(LocalDate data_admissao) {
         this.data_admissao = data_admissao;
     }
     
-    public String getName() {
-        return this.name;
+    public String getNome() {
+        return this.nome;
     }
-    public void setName(String name) {
-        this.name = name;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getTelefone() {
@@ -103,7 +99,7 @@ public class Paciente {
     @Override
     public String toString()
     {
-        return "Paciente --> [Nome: " + this.name + ", data de nascimento: " 
+        return "Paciente --> [Nome: " + this.nome + ", data de nascimento: " 
         + this.data_nasc + ", Endereço: " + this.endereco + ", Telefone: " + this.telefone + "]";
     }
 
@@ -121,10 +117,10 @@ public class Paciente {
                 return false;
         } else if (!id_paciente.equals(other.id_paciente))
             return false;
-        if (name == null) {
-            if (other.name != null)
+        if (nome == null) {
+            if (other.nome != null)
                 return false;
-        } else if (!name.equals(other.name))
+        } else if (!nome.equals(other.nome))
             return false;
         if (data_nasc == null) {
             if (other.data_nasc != null)

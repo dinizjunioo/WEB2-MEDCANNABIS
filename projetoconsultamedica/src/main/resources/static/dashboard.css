@@ -1,8 +1,12 @@
 *{
     margin: 0;
     padding: 0;
+    
 }
 
+body{
+    background-color:darkgray;
+}
 nav {
     padding: 0;
     margin: 0;
@@ -10,24 +14,24 @@ nav {
 }
 
 main{
-    height: 100vh;
     box-sizing: border-box;
+    background-color:darkgray;
+    height: 100%;
     /*padding: 20px;  Espaçamento interno */
 }
 
 nav.menu-lateral{
     padding: 0;
     margin: 0;
-    /* width: 300px; */
-    width: 4%;
+    width: 5%;
+    min-height: 100vh;
     float: left;
-    height: 100%;
     background-color: rgb(58, 54, 49);
     box-shadow: 3px 0 0 #FF0077;
     z-index: 1; /* Define a ordem de empilhamento */
     position: fixed; /* Fixa a nav */
-    top: 0; /* Alinha a nav no topo */
     left: 0; /* Alinha a nav à esquerda */
+    top:0;
     overflow: hidden; /* Esconde o conteúdo que transborda */
 }
 
@@ -35,12 +39,12 @@ nav.menu-lateral:hover{
     width: 20%;
 }
 
+section{
+    min-height: calc(100%); /* Ajuste conforme necessário */
+}
 article{
     background-color:darkgray;
     text-align: center;
-    flex: 1; /* Ocupa o espaço restante */
-    height: 100%;
-    padding-left: 0;
     box-sizing: border-box;
     transition: margin-left 0.5s; /* Adiciona uma transição para o margin-left */
 }
@@ -92,16 +96,29 @@ a{
     font-size: 30px;
 }
 
-footer{
-    margin: 0;
-    padding: 0;
-    background-color: rgb(164, 140, 186);
+ footer{
+    background-color: rgb(58, 54, 49);
     width: 100%;
-    height: auto;
+    height: 50px;
+    bottom: 0;
+} 
+
+.info{
+    padding: 20px;
+    margin-left: 20px;
+}
+.info ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-footer .direitos{
-    text-align: center; 
-    font-size: 30px; 
-    color: rgb(128, 82, 82);
+.info ul li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
 }
+

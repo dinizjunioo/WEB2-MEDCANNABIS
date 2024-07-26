@@ -13,7 +13,7 @@ public class ProjetoConsultaMedicaController {
     @Value("${spring.application.name}")
     private String nameApp;
 
-    @GetMapping("/dashboard")
+    @GetMapping({"/", "/dashboard"})
     public String showDashboard() 
     {
         return "dashboard";
